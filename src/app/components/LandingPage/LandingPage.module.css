@@ -1,0 +1,581 @@
+.landingPageContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    /* border: solid 3px rgba(223, 24, 10, 0.87); */
+    /* margin: auto; */
+    flex-direction: column;
+    align-items: center;
+    /* margin-top:.5rem; */
+    
+
+}
+
+.landingPageTopContainer {
+    display: flex;
+    width: 100%;
+    /* border: solid 6px rgb(236, 146, 143); */
+    padding:0;
+    /* margin-top: 6rem; */
+
+}
+
+
+.landingPageDescription{
+    /* border: solid 6px rgb(220, 247, 70); */
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    padding-top: 2rem;
+    /* padding-right: 5rem; */
+    /* align-items: center; */
+
+}
+
+.mainHeadline {
+    width: 100%;
+    color: rgb(61, 79, 95);
+    font-size: 6rem;
+    line-height: 5.5rem;
+    padding: 0;
+    /* border: solid 3px rgb(209, 208, 206); */
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.border {
+    /* border: 3px solid aliceblue; */
+}
+
+.shortDescription{
+    color: rgb(244, 246, 248);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding: 1rem 5rem 0 5rem;
+    /* border: solid 3px rgb(209, 208, 206); */
+    color: rgb(250, 171, 2);
+    font-weight: 600;
+
+}
+
+.shopCoralsButtonContainer{
+    margin: 1rem 5rem 0 5rem;
+
+    /* border: solid 3px rgb(209, 208, 206); */
+
+}
+
+
+.shopCoralsButton:hover{
+    cursor: pointer;
+    box-shadow: 1px 2px rgb(255, 212, 193);
+    background-color: rgb(240, 149, 14);
+    /* font-size: 1.6rem; */
+
+    transition: .3s;
+
+
+}
+
+
+
+
+.landingPageImageMainContainer{
+    border-radius: 1rem;
+    display: flex;
+    /* border: solid 2px rgba(175, 127, 39, 0.5); */
+    width: 450px;
+    margin-top: 3rem;
+    /* padding-left: 1rem; */
+    margin-left: 15%;
+    margin-right: 10%;
+    align-items: center;
+    /* z-index: -1; */
+
+
+}
+
+.landingPageImageContainer{
+    /* border: solid 4px rgb(85, 179, 14); */
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.landingPageImageContainer:nth-child(2) {
+    transition: all 0.8s ease;
+
+}
+.landingPageImageContainer:nth-child(3) {
+    transition: all 1s ease;
+
+}
+.landingPageImageContainer:nth-child(4) {
+    transition: all 1.2s ease;
+
+}
+.landingPageImageContainer:nth-child(5) {
+    transition: all 1.4s ease;
+
+}
+.landingPageImageContainer:nth-child(6) {
+    transition: all 1.6s ease;
+
+}
+.landingPageImageContainer:nth-child(7) {
+    transition: all 1.8s ease;
+
+}
+.landingPageImageContainer:nth-child(8) {
+    transition: all 1.9s ease;
+
+}
+
+
+.show{
+    opacity: 1;
+    filter: blur(0px);
+
+}
+
+.landingPageClovePolypContainer {
+    position: absolute;
+    display: flex;
+    width: 250px;
+    right: -15%;
+    z-index: 0;
+    animation: bounce 1.5s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+    top:5rem;
+    transform: rotate(7deg)  ;
+
+}
+
+.landingPageZoa1Container{
+    position: absolute;
+    /* border: solid 3px rgb(209, 208, 206); */
+    display: flex;
+    width: 250px;
+    right: -15%;
+    z-index: 0;
+    transform: translateY(80%);
+    animation: bounce 1.5s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(40, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+    top:-3rem;
+
+
+}
+.landingPageZoa2Container{
+    position: absolute;
+    /* border: solid 3px rgb(209, 208, 206); */
+    display: flex;
+   
+    transform: rotate(35deg);
+    width: 250px;
+    right: -10%;
+    z-index: 0;
+    transform: translateY(-25%);
+    animation: bounce 1.7s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+    top:-5rem;
+
+
+}
+
+.landingPageZoa3Container{
+    position: absolute;
+    /* border: solid 3px rgb(209, 208, 206); */
+    display: flex;
+   
+    width: 250px;
+    right: -10%;
+    z-index: 0;
+    transform: translateY(-50%);
+    animation: bounce 2.5s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+    top:-7rem;
+
+
+}
+
+.landingPageGoldToarchContainer{
+    position: absolute;
+    /* border: solid 3px rgb(209, 208, 206); */
+    display: flex;
+   
+    transform: translateY(12%) rotate(35deg);
+    width: 250px;
+    right: 5%;
+    z-index: 0;
+    animation: bounce 2.1s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+
+
+
+}
+
+.landingPageGreenToarchContainer {
+    position: absolute;
+    /* border: solid 3px rgb(209, 208, 206); */
+    display: flex;
+   
+    width: 350px;
+    right: -6%;
+    z-index: -1;
+    transform: translateY(10%);
+    animation: bounce 2.7s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+
+}
+
+.landingPageRedBlueScolyContainer{
+    position: absolute;
+    /* border: solid 3px rgb(209, 208, 206); */
+    display: flex;
+   
+    width: 250px;
+    right: 12%;
+    top: 10%;
+    z-index: -1;
+    transform: translateY(-30%) rotate(35deg);
+    animation: bounce 2.5s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+    top:-2rem;
+
+}
+
+
+
+
+.landingPageMultiColouredHammerContainer{
+    position: absolute;
+    /* border: solid 3px rgb(209, 208, 206); */
+    display: flex;
+   
+    transform: translateY(35%) rotate(35deg);
+    width: 350px;
+    z-index: 0;
+    right: 5%;
+    animation: bounce 3s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(2, 0.5, 0, .5); 
+    animation-iteration-count: infinite; 
+    top:2rem;
+
+
+    /* transform: translateX(200px); */
+
+
+}
+
+
+
+
+
+
+.recentlyAddedCoralsContainer{
+    color: rgb(255, 255, 255);
+    margin-top: 12em;
+    display: flex;
+    /* height: 30rem; */
+    width: 80%;
+    align-items: center;
+    justify-items: center;
+    border: solid 1px rgba(252, 155, 110, 0.8);
+    background-color:  rgb(247, 99, 31, 0.4);
+    flex-direction: column;
+    border-radius: 2rem;
+    opacity: 0;
+
+
+
+}
+
+.recentlyAddedCoralsContainer > video{
+    /* border: solid 4px rgba(250, 218, 203, 0.8); */
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+.video-visible {
+    perspective: 1000px;
+    transition: all 2s ease;
+    transform-style: preserve-3d;
+    perspective: 10px;
+    perspective-origin: top;
+    min-height: 10rem;
+    opacity: 1;
+
+}
+
+
+.glow {
+    /* font-family: 'Pacifico', cursive; */
+    text-shadow: 0 0 2rem rgba(250, 160, 26, 0.8);
+}
+
+
+.textGlow {
+    /* font-family: 'Monofett', cursive; */
+    font-size: 1rem;
+    background: -webkit-linear-gradient(10deg, #87f010,  #106af0, #e05b93);
+    -webkit-background-clip: text; /* Doesn't work on IE*/
+       -moz-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+/* Bounce Animation */
+
+
+@keyframes bounce { 
+    from { 
+        transform: translate3d(0, 0, 0); 
+    } 
+    to { 
+        transform: translate3d(0, 5px, 0); 
+    } 
+} 
+
+
+
+
+
+
+@media screen and (max-width: 760px){
+    .landingPageContainer {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        /* border: solid 3px rgba(223, 24, 10, 0.87); */
+        /* margin: auto; */
+        flex-direction: column;
+        align-items: center;
+        margin:0;
+    
+    }
+    .landingPageTopContainer{
+        /* border: solid 3px rgba(223, 24, 10, 0.87); */
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .mainHeadline{
+        width: 100%;
+        color: rgb(61, 79, 95);
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        /* border: solid 3px rgb(209, 208, 206); */
+        font-weight: 600;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+
+
+    .landingPageImageMainContainer{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        /* padding-left: 1rem; */
+        height:20rem;
+        border: solid 2px rgb(77, 51, 2, 0.5);
+        border-radius: 1rem;
+        margin: auto;
+
+    }
+
+
+
+    .landingPageDescription{
+        /* border: solid 6px rgb(220, 247, 70); */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 4rem;
+        align-items: center;
+        padding-top: 0;
+    
+    }
+
+    .shortDescription{
+        color: rgb(244, 246, 248);
+        font-size: .9rem;
+        line-height: 1rem;
+        padding: 1rem 2rem 0 1rem;
+        /* border: solid 3px rgb(209, 208, 206); */
+        color: rgb(250, 171, 2);
+        font-weight: 600;
+    
+    }
+
+
+    .landingPageClovePolypContainer {
+        position: absolute;
+        display: flex;
+        width: 170px;
+        right: -15%;
+        z-index: 0;
+        animation: bounce 1.5s; 
+        animation-direction: alternate; 
+        animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+        animation-iteration-count: infinite; 
+        top:5rem;
+        transform: rotate(7deg)  ;
+    
+    }
+    
+    .landingPageZoa1Container{
+        position: absolute;
+        /* border: solid 3px rgb(209, 208, 206); */
+        display: flex;
+        width: 170px;
+        right: -15%;
+        z-index: 0;
+        animation: bounce 1.5s; 
+        animation-direction: alternate; 
+        animation-timing-function: cubic-bezier(40, 0.05, 1, .5); 
+        animation-iteration-count: infinite; 
+        top:-1rem;
+    
+    
+    }
+    .landingPageZoa2Container{
+        position: absolute;
+        /* border: solid 3px rgb(209, 208, 206); */
+        display: flex;
+       
+        transform: rotate(35deg);
+        width: 170px;
+        right: -10%;
+        z-index: 0;
+        transform: translateY(-25%);
+        animation: bounce 1.7s; 
+        animation-direction: alternate; 
+        animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+        animation-iteration-count: infinite; 
+        top:-5rem;
+    
+    
+    }
+    
+    .landingPageZoa3Container{
+        position: absolute;
+        /* border: solid 3px rgb(209, 208, 206); */
+        display: flex;
+       
+        width: 170px;
+        right: -5%;
+        z-index: 0;
+        transform: translateY(-50%);
+        animation: bounce 2.5s; 
+        animation-direction: alternate; 
+        animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+        animation-iteration-count: infinite; 
+        top:-6rem;
+    
+    
+    }
+    
+    .landingPageGoldToarchContainer{
+        position: absolute;
+        /* border: solid 3px rgb(209, 208, 206); */
+        display: flex;
+       
+        transform: translateY(12%) rotate(35deg);
+        width: 170px;
+        right: 5%;
+        z-index: 0;
+        animation: bounce 2.1s; 
+        animation-direction: alternate; 
+        animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+        animation-iteration-count: infinite; 
+    
+    
+    
+    }
+    
+    .landingPageGreenToarchContainer {
+        position: absolute;
+        /* border: solid 3px rgb(209, 208, 206); */
+        display: flex;
+        width: 270px;
+        right: 6%;
+        z-index: -1;
+        animation: bounce 2.7s; 
+        animation-direction: alternate; 
+        animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+        animation-iteration-count: infinite; 
+        top:1rem;
+
+    }
+    
+    .landingPageRedBlueScolyContainer{
+        position: absolute;
+        /* border: solid 3px rgb(209, 208, 206); */
+        display: flex;
+       
+        width: 170px;
+        right: 20%;
+        top: 10%;
+        z-index: -1;
+        transform: translateY(-30%) rotate(35deg);
+        animation: bounce 2.5s; 
+        animation-direction: alternate; 
+        animation-timing-function: cubic-bezier(5, 0.05, 1, .5); 
+        animation-iteration-count: infinite; 
+        top:-2rem;
+    
+    }
+    
+    
+    
+    
+    .landingPageMultiColouredHammerContainer{
+        position: absolute;
+        /* border: solid 3px rgb(209, 208, 206); */
+        display: flex;
+       
+        transform: translateY(35%) rotate(35deg);
+        width: 270px;
+        z-index: 0;
+        right: 5%;
+        animation: bounce 3s; 
+        animation-direction: alternate; 
+        animation-timing-function: cubic-bezier(2, 0.5, 0, .5); 
+        animation-iteration-count: infinite; 
+        top:2rem;
+    
+    
+        /* transform: translateX(200px); */
+    
+
+    }
+
+    .showCoralsContainer{
+       /* border: solid 3px rgb(209, 208, 206); */
+       align-items: center;
+       justify-content: center;
+    }
+
+}

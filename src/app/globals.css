@@ -2,20 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
+
+:root {
+  --clr-1: #052b2f;
+  --clr-2: #073438;
+  --clr-3: #0e4b50;
+  --clr-4: #27a094;
+  --clr-5: #bbb957;
+}
+
+.card {
+  border-radius: 1rem;
+  position: relative;
+
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: 1;
+  background: conic-gradient(from var(--gradient-angle),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3));
+  border-radius: inherit;
+  animation: rotation 3s linear infinite;
+}
+
+.card-over {
+  background-color: aqua;
+  z-index: 2;
+  border-radius: 1rem;
+  position: relative;
+  /* width: 400px; */
+
+  background-color: rgb(196, 221, 252);
+  border-radius: 1rem;
+  display: flex;
+  /* border: solid 2px rgba(175, 127, 39, 0.5); */
+  width: 100%;
+  /* padding-left: 1rem; */
+  height: 100%;
+  align-items: center;
+}
+
+.card::after {
+  filter: blur(1.5rem);
+
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: purple;
+
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* color: rgb(var(--foreground-rgb));
+  background: purple;
+  padding:1rem; */
+}
+
+
+.coralsImage {
+  width: 400px;
+  height: 270px;
+  object-fit: cover;
+  /* border: 2px solid whitesmoke; */
+
+}
+
+.coralsImage-container {
+  overflow: hidden;
+
+  /* border: 2px solid whitesmoke; */
+
+}
+
+
+.low-opacity-border {
+  border: 1px solid rgb(252, 225, 194, 0.3)
+}
+
+
+
+
+@media screen and (max-width: 760px) {
+
+  .card-over {
+    background-color: rgb(86, 145, 145);
+    z-index: 2;
+    border-radius: 1rem;
+    position: relative;
+    /* width: 400px; */
+
+    background-color: rgb(6, 37, 75);
+    border-radius: 1rem;
+    display: flex;
+    /* border: solid 2px rgba(175, 127, 39, 0.5); */
+    width: 100%;
+    /* padding-left: 1rem; */
+    height: 80rem;
+    align-items: center;
+  }
 }
