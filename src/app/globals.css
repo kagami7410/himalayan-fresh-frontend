@@ -27,7 +27,7 @@
   content: "";
   position: absolute;
   inset: -0.5rem;
-  z-index: 1;
+  z-index: 0;
   background: conic-gradient(from var(--gradient-angle),
       var(--clr-3),
       var(--clr-4),
@@ -40,7 +40,7 @@
 
 .card-over {
   background-color: aqua;
-  z-index: 2;
+  z-index: 1;
   border-radius: 1rem;
   position: relative;
   /* width: 400px; */

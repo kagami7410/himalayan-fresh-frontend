@@ -51,7 +51,7 @@ const LandingPage = () => {
     
     if(!isMobile){
       console.log("is mobile: ", isMobile)
-      const newXPosition = 25
+      const newXPosition = 20
       setXPosition(newXPosition);
       setTimeout(() => {
         setOpacity(1)
@@ -98,9 +98,9 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className={`${styles.landingPageContainer} ${border}`}>
+    <div className={`${styles.landingPageContainer} ${border} border-rose-950` }>
 
-      <div className={`${styles.landingPageTopContainer} ${border} bg-slate-200 pb-10 pt-4`}>
+      <div className={`${styles.landingPageTopContainer} ${border} bg-slate-200 pb-10 pt-4 border`}>
 
         <div className={`${styles.landingPageDescription} ${border} transform transition-all `}
           style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(${xPosition}%)` }}>
@@ -108,14 +108,14 @@ const LandingPage = () => {
           <div className={`${styles.shortDescription} ${styles.glow} ${styles.textGlow} ${border}
             `}>- Freshly roasted beans from Nepal delivered to your door. Start your morning right.</div>
           <div className={`${styles.shopCoralsButtonContainer} ${border} `}> 
-          <Link href={{pathname: '/corals'}} className="btn btn-lg opacity-0  sm:opacity-100  sm:btn-lg border-amber-400">Shop Beans</Link>
+          <Link href={{pathname: '/shopBeans'}} className="btn btn-lg opacity-0  sm:opacity-100  sm:btn-lg border-amber-400">Shop Beans</Link>
           </div>
         </div>
 
 
-        <div className={`${styles.landingPageImageMainContainer} ${border} card`}>
-          <div className='card-over flex justify-center '>
-          <Link href='/corals' className="btn  opacity-80 btn-lg sm:opacity-0 border-amber-400">Shop Beans</Link>
+        <div className={`${styles.landingPageImageMainContainer} ${border} card `} style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(-${xPosition}%)` }}>
+          <div className='card-over flex justify-center'>
+          <Link href='/shopBeans' className="btn  opacity-80 btn-lg sm:opacity-0 border-amber-400">Shop Beans</Link>
 
 
           </div>
