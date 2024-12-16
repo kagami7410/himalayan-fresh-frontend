@@ -14,10 +14,10 @@ const page = () => {
 
           <div className='flex card border flex-col items-center justify-center w-4/5 mt-8  sm:mx-8'>
           <div className='flex flex-col  items-center border  rounded-md  z-50 w-full bg-slate-200'>
-          <Link href={'shopBeans/roastedBeans'} className='flex  low-opacity-border rounded-md w-3/4 justify-center m-4'>
+          <Link href={'/shopBeans/wholeBean'} className='flex  low-opacity-border rounded-md w-3/4 justify-center m-4'>
               {/* <Image className='coralsImage' src={SPS1} alt="Example" /> */}
             </Link>
-            <Link href={'shopBeans/roastedBeans'} className="btn  opacity-90 btn-lg  border">Roasted Beans</Link>
+            <Link href={'/shopBeans/wholeBean'} className="btn  opacity-90 btn-lg  border">Whole Beans</Link>
 
           </div>
 
@@ -25,10 +25,10 @@ const page = () => {
 
           <div className='flex card border flex-col items-center justify-center w-3/4 mt-8  sm:mx-8'>
           <div className='flex flex-col  items-center border  rounded-md  z-50 w-full bg-slate-200'>
-          <Link href={'shopBeans/greenBeans'} className='flex  low-opacity-border rounded-md w-3/4 justify-center m-4'>
+          <Link href={'/shopBeans/ground'} className='flex  low-opacity-border rounded-md w-3/4 justify-center m-4'>
               {/* <Image className='coralsImage' src={SPS1} alt="Example" /> */}
             </Link>
-            <Link href={'shopBeans/greenBeans'} className="btn  opacity-90 btn-lg  border">Green Beans</Link>
+            <Link href={'/shopBeans/ground'} className="btn  opacity-90 btn-lg  border"> Ground</Link>
 
           </div>
           </div>

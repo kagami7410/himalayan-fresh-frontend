@@ -15,44 +15,47 @@ import { useBasket } from '@/app/components/BasketContext/BasketContext';
 
 
 
-const page =  ({ params }: {params: Promise<{beansType: string}>}) => {
+const page =  ({ params }: {params: Promise<{beanType: string}>}) => {
 
     // asynchronous access of `params.id`.
 
   const [items, setItems] = useState<BasketItem[]>([]); 
   const { addItemToBasket } = useBasket();
-  const { beansType } = React.use(params)
+  const { beanType } = React.use(params)
   const handleAddToBasket = ( item: BasketItem) => {
     addItemToBasket(item);
   };
-  const vaildPaths = ["getAll", "greenBeans", "darkRoastedBeans"]
+  // const vaildPaths = ["getAll", "greenBeans", "darkRoastedBeans"]
 
   useEffect(()=> {
       getItems()
   }, [])
 
   function getItems() {
-    if(vaildPaths.includes(beansType)){
-        if(beansType === "getAll"){
+    // if(vaildPaths.includes(beanType)){
+        if(beanType === "getAll"){
+          console.log('loading all beans')
+
             fetch('/api/getAllItems')
             .then(res => res.json())
             .then(data => setItems(data))
         }
         else{
-            fetch(`/api/getItemByType?itemType=${beansType}`)
+          console.log(`loading ${beanType} beans`)
+
+            fetch(`/api/getType?beanType=${beanType}`)
             .then(res => res.json())
             .then(data => setItems(data))
         }
-    }
+    // }
 
-    else{
-          notFound()
-    }
+    // else{
+    //       notFound()
+    // }
  }
 
 
  const jsxreturnedAllItems = items.map(eachItem => {
-
   return (
       <div key={eachItem.id} className='flex flex-col w-3/4 border m-3 p-3 lg:w-1/4'>
 
