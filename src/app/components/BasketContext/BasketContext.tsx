@@ -7,7 +7,9 @@ interface BasketContextData {
   basket: BasketItem[];
   removeItemInBasket: (item: BasketItem) => void;
   addItemToBasket: (item: BasketItem) => void;
+  removeBasketState: () => void;
   getBasketCount: () => number;
+  getBasketTotal: () => number;
 }
 
 
@@ -22,9 +24,9 @@ export const useBasket = () => {
 
 // Define a type for the item
 interface BasketItem {
-  id: string;
+  id: number;
   title: string;
-  price: boolean;
+  price: number;
   code: string;
   description: string;
   quantity: number;
@@ -44,7 +46,7 @@ const BasketProvider = ({ children }: BasketProviderProps) => {
       const savedBasket = localStorage.getItem('basket');
       return savedBasket ? JSON.parse(savedBasket) : [];
     }
-    return [];
+    return null;
   });
 
   
@@ -71,7 +73,7 @@ const BasketProvider = ({ children }: BasketProviderProps) => {
     });
   }
 
-  // Function to add item to the basket
+  // Function to remove item to the basket
   const removeItemInBasket = (item: BasketItem) => {
     setBasket((currentBasket) => {
       const existingItem = currentBasket.find((basketItem) => basketItem.id === item.id);
@@ -84,22 +86,40 @@ const BasketProvider = ({ children }: BasketProviderProps) => {
             : basketItem
         );
       }
+
       else {
         const filteredItems = currentBasket.filter(eachItem => eachItem !== item);
+        if(filteredItems.length < 1){
+          localStorage.removeItem('basket')
+        }
         return filteredItems
       }
       // Add new item if it doesn't exist in the basket
     });
   };
 
+  const removeBasketState = () => {
+    setBasket([]);
+  }
+
     // Function to get basket count (total number of items)
     const getBasketCount = () => {
-      return basket.reduce((count, item) => count + item.quantity, 0);
+      return basket.length? basket.reduce((count, item) => count + item.quantity, 0):0;
     };
 
+    // Function to get basket total (total number of items)
+    const getBasketTotal = () => {
+      const unroundedTotal:number = basket.reduce((count:number, item:BasketItem) => count + (item.price*item.quantity), 0);
+      return basket.length? Math.round(unroundedTotal * 100)/100 : 0;
+    };
+
+    
+
   return (
-    <BasketContext.Provider value={{ basket, addItemToBasket, getBasketCount, removeItemInBasket}}>
-      {children}
+    <BasketContext.Provider value={{ basket, removeBasketState, addItemToBasket, getBasketCount, getBasketTotal, removeItemInBasket}}>
+      <div>
+        {children}
+      </div>
     </BasketContext.Provider>
   )
 }

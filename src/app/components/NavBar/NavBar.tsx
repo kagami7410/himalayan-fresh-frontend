@@ -12,6 +12,7 @@ interface BasketContextData {
   basket: BasketItem[];
   addItemToBasket: (item: BasketItem) => void;
   getBasketCount: () => number;
+  getBasketTotal: () => number;
 }
 
 
@@ -27,6 +28,10 @@ interface BasketItem {
 
 const NavBar = () => {
 
+  // Export a custom hook to use the BasketContext
+  const { getBasketCount, getBasketTotal } = useBasket();
+
+
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -35,11 +40,21 @@ const NavBar = () => {
     }
   }, []);
 
+
+  
+  useEffect(()=>{
+    console.log("basket count is: ", getBasketCount())
+  
+    if(getBasketCount() === 0){
+      console.log('basket is empty')
+    }
+  
+  }, [getBasketCount()])
+  
+
   const borderVisibile = ''
   let basketItemCount;
 
-  // Export a custom hook to use the BasketContext
-  const { getBasketCount } = useBasket();
 
 
 
@@ -64,7 +79,7 @@ const NavBar = () => {
 
         <ul
           tabIndex={0}
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          className="menu menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
           <li><a>Item 1</a></li>
           <li>
             <a>Parent</a>
@@ -78,11 +93,11 @@ const NavBar = () => {
       </div>
 
       <div className={` ${borderVisibile} `}>
-        <Link href={'/'} className={`btn btn-ghost text-xl sm:text-3xl mr-8`}> Himalayan Fresh</Link>
+        <Link href={'/'} className={`btn btn-ghost text-xl mr-6 md:text-2xl md:mr-10 md:w-72`}> Himalayan Fresh</Link>
       </div>
 
       <div className="flex  w-11/12 ">
-      <div className="navbar bg-base-100  opacity-0 sm:opacity-100 pr-10">
+      <div className="navbar bg-base-100  opacity-0 md:opacity-100 pr-10">
         <div className="navbar">
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -136,7 +151,7 @@ const NavBar = () => {
             className="rounded-md card-compact dropdown-content bg-base-100 z-[2] mt-3 w-52 shadow">
             <div className="card-body">
               <span className="text-lg font-bold">{isClient ? getBasketCount() : 0} Items</span>
-              <span className="text-info">Subtotal: $999</span>
+              <span className="text-info">Subtotal: {getBasketTotal()}</span>
               <div className="card-actions">
                 <Link href={"/basket"} className=" btn btn-primary btn-block">View cart</Link>
               </div>
@@ -158,7 +173,7 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            className="menu menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <li>
               <a className="justify-between">
                 Profile

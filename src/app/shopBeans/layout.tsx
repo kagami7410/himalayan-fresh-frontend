@@ -6,7 +6,7 @@ const layout = ({
     children: React.ReactNode
 }) => {
     return (
-        <div>
+        <div className='flex border flex-col  justify-items-center'>
             <>
                 <h2 className='flex justify-center'>Shop Beans</h2>
                 {children}
