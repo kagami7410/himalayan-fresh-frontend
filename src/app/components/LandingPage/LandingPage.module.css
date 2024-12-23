@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    border: solid 6px rgb(236, 146, 143);
+    /* border: solid 6px rgb(236, 146, 143); */
     padding:0;
     /* margin-top: 6rem; */
 
@@ -24,7 +24,7 @@
 
 
 .landingPageDescription{
-    border: solid 6px rgb(220, 247, 70);
+    /* border: solid 6px rgb(220, 247, 70); */
     display: flex;
     flex-direction: column;
     width: 800px;
@@ -86,7 +86,7 @@
 .landingPageImageMainContainer{
     border-radius: 1rem;
     display: flex;
-    border: solid 2px rgba(175, 127, 39, 0.5);
+    /* border: solid 2px rgba(175, 127, 39, 0.5); */
     width: 450px;
     height: 450px;
     margin-top: 3rem;
@@ -100,7 +100,7 @@
 }
 
 .landingPageImageContainer{
-    border: solid 4px rgb(85, 179, 14);
+    /* border: solid 4px rgb(85, 179, 14); */
     width: 500px;
     display: flex;
     justify-content: center;

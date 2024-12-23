@@ -99,9 +99,9 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className={`${styles.landingPageContainer} ${border} border-rose-950` }>
+    <div className={`${styles.landingPageContainer} ${border}` }>
 
-      <div className={`${styles.landingPageTopContainer} ${border} bg-slate-200 pb-10 pt-4 border`}>
+      <div className={`${styles.landingPageTopContainer} ${border} bg-slate-200 pb-10 pt-4`}>
 
         <div className={`${styles.landingPageDescription} ${border} transform transition-all `}
           style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(${xPosition}%)` }}>
@@ -109,14 +109,14 @@ const LandingPage = () => {
           <div className={`${styles.shortDescription} ${styles.glow} ${styles.textGlow} ${border}
             `}>- Freshly roasted beans from Nepal delivered to your door. Start your morning right.</div>
           <div className={`${styles.shopCoralsButtonContainer} ${border} `}> 
-          <Link href={{pathname: '/shopBeans'}} className="btn btn-lg opacity-0  sm:opacity-100  sm:btn-lg border-amber-400">Shop Beans</Link>
+          <Link href={{pathname: '/shopBeans'}} className="btn btn-lg opacity-0  sm:opacity-100  sm:btn-lg">Shop Beans</Link>
           </div>
         </div>
 
 
         <div className={`${styles.landingPageImageMainContainer} ${border} card `} style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(-${xPosition}%)` }}>
           <div className='card-over flex justify-center'>
-          <Link href='/shopBeans' className="btn  opacity-80 btn-lg sm:opacity-0 border-amber-400">Shop Beans</Link>
+          <Link href='/shopBeans' className="btn  opacity-80 btn-lg sm:opacity-0">Shop Beans</Link>
 
 
           </div>
@@ -137,22 +137,8 @@ const LandingPage = () => {
 
         </div>
 
-
       </div>
 
-      <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>open modal</button>
-<dialog id="my_modal_1" className="modal">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">Hello!</h3>
-    <p className="py-4">Press ESC key or click the button below to close</p>
-    <div className="modal-action">
-      <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
     </div>
   )
 }
