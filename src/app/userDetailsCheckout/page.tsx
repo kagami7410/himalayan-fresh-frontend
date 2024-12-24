@@ -68,10 +68,11 @@ const page = () => {
       body: JSON.stringify(getSubmitOrderBody()),
     });
     console.log('status: ', response.status)
+    setShowModal(!showModal)
 
     if (response.status === 202) {
       localStorage.setItem('basket', JSON.stringify([]))
-      setShowModal(!showModal)
+      // setShowModal(!showModal)
       removeBasketState()
     }
   };
@@ -150,9 +151,9 @@ const page = () => {
         </div>
       </div>
       <div>
-        {showModal ? <div className=" modal-box fixed top-1/3 left-1/4 bg-slate-200">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click the button below to close</p>
+        {showModal ? <div className=" modal-box fixed top-1/3 left-1/2 -translate-x-1/2  m-auto bg-slate-200">
+          <h3 className="font-bold text-lg">Thank you!</h3>
+          <p className="py-4">Your Order #732672 is confirmed! Confirmation has been sent to your email!</p>
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}

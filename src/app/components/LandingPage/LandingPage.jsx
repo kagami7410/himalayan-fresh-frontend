@@ -18,7 +18,7 @@ const LandingPage = () => {
 
   const [border, setBorder] = useState('');
   const observedElement = useRef(null);
-  
+
   const [isMobile, setIsMobile] = useState(false)
   const [screenSize, setScreenSize] = useState(0);
 
@@ -27,15 +27,15 @@ const LandingPage = () => {
       setScreenSize(window.innerWidth);
     };
     handleResize()
-    if(screenSize < 760){
-        setIsMobile(true)
-        console.log("Device is Mobile")
+    if (screenSize < 760) {
+      setIsMobile(true)
+      console.log("Device is Mobile")
     }
-    else{
-        setIsMobile(false)
-        console.log('Device is Desktop')
+    else {
+      setIsMobile(false)
+      console.log('Device is Desktop')
     }
-}, [screenSize])
+  }, [screenSize])
 
 
 
@@ -43,28 +43,28 @@ const LandingPage = () => {
   useEffect(() => {
     // Get the new X position (for example, randomly)
 
-    if(isMobile){
+    if (isMobile) {
       console.log(isMobile)
       const newXPosition = 0
       setXPosition(newXPosition);
     }
 
-    
-    if(!isMobile){
+
+    if (!isMobile) {
       console.log("is mobile: ", isMobile)
       const newXPosition = 20
       setXPosition(newXPosition);
       setTimeout(() => {
         setOpacity(1)
         // setBorder('border')
-  
+
       }, 1)
     }
-    else{
-          setTimeout(() => {
-      setOpacity(1)
+    else {
+      setTimeout(() => {
+        setOpacity(1)
 
-    }, 1)
+      }, 1)
     }
 
 
@@ -99,24 +99,22 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className={`${styles.landingPageContainer} ${border}` }>
-
+    <div className={`${styles.landingPageContainer} ${border}`}>
       <div className={`${styles.landingPageTopContainer} ${border} bg-slate-200 pb-10 pt-4`}>
-
         <div className={`${styles.landingPageDescription} ${border} transform transition-all `}
           style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(${xPosition}%)` }}>
           <div className={`${styles.mainHeadline} ${border}`}>Premium Coffee, Delivered!</div>
           <div className={`${styles.shortDescription} ${styles.glow} ${styles.textGlow} ${border}
             `}>- Freshly roasted beans from Nepal delivered to your door. Start your morning right.</div>
-          <div className={`${styles.shopCoralsButtonContainer} ${border} `}> 
-          <Link href={{pathname: '/shopBeans'}} className="btn btn-lg opacity-0  sm:opacity-100  sm:btn-lg">Shop Beans</Link>
+          <div className={`${styles.shopCoralsButtonContainer} ${border} `}>
+            <Link href={{ pathname: '/shopBeans' }} className="btn btn-lg opacity-0  sm:opacity-100  sm:btn-lg">Shop Beans</Link>
           </div>
         </div>
 
 
         <div className={`${styles.landingPageImageMainContainer} ${border} card `} style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(-${xPosition}%)` }}>
           <div className='card-over flex justify-center'>
-          <Link href='/shopBeans' className="btn  opacity-80 btn-lg sm:opacity-0">Shop Beans</Link>
+            <Link href='/shopBeans' className="btn  opacity-80 btn-lg sm:opacity-0">Shop Beans</Link>
 
 
           </div>
@@ -129,7 +127,7 @@ const LandingPage = () => {
       <div className='my-40  flex-col ' ref={observedElement} >
         <h1 className=' text-center text-xl md:text-3xl'> Story </h1>
         <div className='my-5 flex  justify-center items-center'>
-        {/* <video className='w-[80%] rounded-3xl  '
+          {/* <video className='w-[80%] rounded-3xl  '
           src="http://localhost:8000/contents/video?videoName=video1"
           loop
           autoPlay
