@@ -6,9 +6,9 @@ const layout = ({
     children: React.ReactNode
 }) => {
     return (
-        <div className='flex border flex-col  justify-items-center'>
+        <div className='flex  flex-col  justify-items-center'>
             <>
-                <h2 className='flex justify-center'>Shop Beans</h2>
+                {/* <h2 className='flex justify-center p-2 m-2 bg-orange-300'>Free Delivery on order over £50</h2> */}
                 {children}
 
             </>

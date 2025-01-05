@@ -37,9 +37,9 @@
 .mainHeadline {
     width: 100%;
     color: rgb(61, 79, 95);
-    font-size: 6rem;
-    line-height: 5.5rem;
-    padding: 0;
+    font-size: 4.5rem;
+    line-height: 4rem;
+    padding: 2rem;
     /* border: solid 3px rgb(209, 208, 206); */
     font-weight: 600;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -385,6 +385,8 @@
     }
 
     .mainHeadline{
+        padding: 0rem;
+
         width: 100%;
         color: rgb(61, 79, 95);
         font-size: 2.5rem;

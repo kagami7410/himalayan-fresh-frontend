@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { useBasket } from '../components/BasketContext/BasketContext';
 import { useRouter } from 'next/navigation'
+import Loading from '../components/Loading/Loading';
 
 const page = () => {
   const router = useRouter() // may be null or a NextRouter instance
@@ -12,10 +13,8 @@ const page = () => {
     itemId: number,
     itemQuantity: number
   }
-
-
+  const [loading, setLoading] = useState(false);
   const { basket, removeBasketState } = useBasket();
-
   const [showModal, setShowModal] = useState(false);
 
   const [userDetails, setUserDetails] = useState({
@@ -59,22 +58,27 @@ const page = () => {
 
 
   const handleSubmit = async () => {
-
-    const response = await fetch("/api/postOrder", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(getSubmitOrderBody()),
-    });
-    console.log('status: ', response.status)
-    setShowModal(!showModal)
-
-    if (response.status === 202) {
-      localStorage.setItem('basket', JSON.stringify([]))
-      // setShowModal(!showModal)
-      removeBasketState()
+    if(basket.length > 0){
+      setLoading(true)
+      const response = await fetch("/api/postOrder", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(getSubmitOrderBody()),
+      });
+      console.log('status: ', response.status)
+      setShowModal(!showModal)
+      setLoading(false)
+  
+      if (response.status === 202) {
+        localStorage.setItem('basket', JSON.stringify([]))
+        // setShowModal(!showModal)
+        removeBasketState()
+  
+      }
     }
+
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -165,6 +169,9 @@ const page = () => {
             </form>
           </div>
         </div> : <></>}
+      </div>
+      <div>
+       {loading?<Loading/>:<></>} 
       </div>
     </div>
 

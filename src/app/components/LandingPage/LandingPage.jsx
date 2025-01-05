@@ -103,18 +103,18 @@ const LandingPage = () => {
       <div className={`${styles.landingPageTopContainer} ${border} bg-slate-200 pb-10 pt-4`}>
         <div className={`${styles.landingPageDescription} ${border} transform transition-all `}
           style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(${xPosition}%)` }}>
-          <div className={`${styles.mainHeadline} ${border}`}>Premium Coffee, Delivered!</div>
+          <div className={`${styles.mainHeadline} ${border}`}>Rock-Solid Magnetic Frag Holder</div>
           <div className={`${styles.shortDescription} ${styles.glow} ${styles.textGlow} ${border}
-            `}>- Freshly roasted beans from Nepal delivered to your door. Start your morning right.</div>
+            `}>- "Never worry about slipping or shifting – perfect for reef aquariums.".</div>
           <div className={`${styles.shopCoralsButtonContainer} ${border} `}>
-            <Link href={{ pathname: '/shopBeans' }} className="btn btn-lg opacity-0  sm:opacity-100  sm:btn-lg">Shop Beans</Link>
+            <Link href={{ pathname: '/shopFragRacks' }} className="btn btn-lg opacity-0 hover:bg-yellow-400 bg-yellow-300 sm:opacity-100 border-0  sm:btn-lg">Buy Now</Link>
           </div>
         </div>
 
 
         <div className={`${styles.landingPageImageMainContainer} ${border} card `} style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(-${xPosition}%)` }}>
           <div className='card-over flex justify-center'>
-            <Link href='/shopBeans' className="btn  opacity-80 btn-lg sm:opacity-0">Shop Beans</Link>
+            <Link href='/shopFragRacks' className="btn  opacity-80 btn-lg sm:opacity-0">Buy Now</Link>
 
 
           </div>
@@ -125,7 +125,32 @@ const LandingPage = () => {
 
 
       <div className='my-40  flex-col ' ref={observedElement} >
-        <h1 className=' text-center text-xl md:text-3xl'> Story </h1>
+        <h1 className=' text-center text-xl md:text-3xl'> Story | Problem | Solution </h1>
+        <div className='my-5 flex  justify-center items-center'>
+          {/* <video className='w-[80%] rounded-3xl  '
+          src="http://localhost:8000/contents/video?videoName=video1"
+          loop
+          autoPlay
+          controls/> */}
+
+        </div>
+
+      </div>
+      <div className='my-40  flex-col ' ref={observedElement} >
+        <h1 className=' text-center text-xl md:text-3xl'> Benifits </h1>
+        <div className='my-5 flex  justify-center items-center'>
+          {/* <video className='w-[80%] rounded-3xl  '
+          src="http://localhost:8000/contents/video?videoName=video1"
+          loop
+          autoPlay
+          controls/> */}
+
+        </div>
+
+      </div>
+
+      <div className='my-40  flex-col ' ref={observedElement} >
+        <h1 className=' text-center text-xl md:text-3xl'> FAQ </h1>
         <div className='my-5 flex  justify-center items-center'>
           {/* <video className='w-[80%] rounded-3xl  '
           src="http://localhost:8000/contents/video?videoName=video1"

@@ -2,8 +2,9 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import NavBar from './components/NavBar/NavBar'
-import NavBar2 from './components/NavBar2/NavBar2'
+import NavBar2 from './components/Footer/Footer'
 import BasketProvider from './components/BasketContext/BasketContext';
+import Footer from './components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,10 +27,13 @@ export default function RootLayout({
         </header>
         <BasketProvider> 
         <NavBar/>
+        <h2 className='flex justify-center pb-2 pt-2 mt-2 bg-orange-300'>Free Delivery on order over £50</h2>
         {children}
         </BasketProvider>
-        <footer></footer>
+        <Footer/>
+
         </body>
+
     </html>
 
 

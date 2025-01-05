@@ -1,4 +1,5 @@
 'use client'
+import { basename } from 'path/posix';
 import React, { useEffect, useState, createContext, useContext, ReactNode } from 'react'
 const BasketContext = createContext<BasketContextData | undefined>(undefined);
 
@@ -104,13 +105,24 @@ const BasketProvider = ({ children }: BasketProviderProps) => {
 
     // Function to get basket count (total number of items)
     const getBasketCount = () => {
-      return basket.length? basket.reduce((count, item) => count + item.quantity, 0):0;
+      if( basket === null){
+        return 0
+      }
+      else{
+        return basket.reduce((count, item) => count + item.quantity, 0);
+      }
     };
 
     // Function to get basket total (total number of items)
     const getBasketTotal = () => {
-      const unroundedTotal:number = basket.reduce((count:number, item:BasketItem) => count + (item.price*item.quantity), 0);
-      return basket.length? Math.round(unroundedTotal * 100)/100 : 0;
+      if( basket === null){
+        return 0
+      }
+      else{
+        const unroundedTotal:number = basket.reduce((count:number, item:BasketItem) => count + (item.price*item.quantity), 0);
+        return basket.length? Math.round(unroundedTotal * 100)/100 : 0;
+      }
+
     };
 
     

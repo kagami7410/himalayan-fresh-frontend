@@ -30,11 +30,9 @@ const NavBar = () => {
 
   // Export a custom hook to use the BasketContext
   const { getBasketCount, getBasketTotal } = useBasket();
-
-
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window == 'object') {
       // Safe to use window or document here
       setIsClient(true);
     }
@@ -60,7 +58,7 @@ const NavBar = () => {
 
 
   return (
-    <div className={`navbar bg-base-100 ${borderVisibile}`}>
+    <div className={`navbar h-8 md:h-10  bg-base-100 ${borderVisibile}`}>
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
           <svg
@@ -93,7 +91,7 @@ const NavBar = () => {
       </div>
 
       <div className={` ${borderVisibile} `}>
-        <Link href={'/'} className={`btn btn-ghost text-xl mr-6 md:text-2xl md:mr-10 md:w-72`}> Himalayan Fresh</Link>
+        <Link href={'/'} className={`btn btn-ghost text-xl mr-6 md:text-2xl md:mr-10 md:w-72`}> PolyReef Creations</Link>
       </div>
 
       <div className="flex  w-11/12 ">
@@ -151,7 +149,7 @@ const NavBar = () => {
             className="rounded-md card-compact dropdown-content bg-base-100 z-[2] mt-3 w-52 shadow">
             <div className="card-body">
               <span className="text-lg font-bold">{isClient ? getBasketCount() : 0} Items</span>
-              <span className="text-info">Subtotal: {getBasketTotal()}</span>
+              <span className="text-info">Total:  £{isClient ? getBasketTotal() : 0}</span>
               <div className="card-actions">
                 <Link href={"/basket"} className=" btn btn-primary btn-block">View cart</Link>
               </div>
