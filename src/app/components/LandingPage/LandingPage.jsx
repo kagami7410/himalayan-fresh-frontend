@@ -124,14 +124,45 @@ const LandingPage = () => {
       </div>
 
 
-      <div className='my-40  flex-col ' ref={observedElement} >
+      <div className='my-40  flex-col border w-5/6 ' ref={observedElement} >
         <h1 className=' text-center text-xl md:text-3xl'> Story | Problem | Solution </h1>
-        <div className='my-5 flex  justify-center items-center'>
+        <div className='my-5 flex  justify-center items-center border'>
           {/* <video className='w-[80%] rounded-3xl  '
           src="http://localhost:8000/contents/video?videoName=video1"
           loop
           autoPlay
           controls/> */}
+          <div className='mt-4 border'>
+            <h1>🚨 Transform Your Reef Tank with the Ultimate Coral Frag Rack! 🚨</h1>
+            <h1>🔷 Aqua-Print 21cm Honeycomb Frag Rack </h1>
+            <h1>💎 Available Now at Kraken Corals & Aquatics 💎</h1>
+            <ul className='list-disc list-inside mt-4'>
+              <strong>✅ Innovative Honeycomb Design</strong>
+              <li>Maximize coral placement with full usability of all frag holes!</li>
+              <li>Designed to minimize shadowing and boost upward flow, perfect for SPS coral growth.</li>
+            </ul>
+
+            <ul className='list-disc list-inside mt-4'>
+              <strong>✅ Heavy-Duty Magnets Included</strong>
+              <li>Attach securely to glass up to 20mm thick—no slipping, no worries!</li>
+              <li>Single magnet is all you need for a strong and sturdy hold but hey if you want two go for it!</li>
+            </ul>
+
+            <ul className='list-disc list-inside mt-4'>
+              <strong>🌊 Stylish, Durable, and Functional</strong>
+              <li>Polyreef frag racks combine aesthetics with performance to give your tank a professional edge.</li>
+            </ul>
+
+            <div className='mt-4'>
+            <h1 className='text-sm'>📢 Grab yours now at the best price!</h1>
+            <h1 className='text-sm'>👉 Visit REEFIN 3D to upgrade your reef tank today! </h1>
+            <h1 className='text-sm'>✨ Don't miss out! Your reef deserves the best! ✨</h1>
+
+            </div>
+
+
+
+          </div>
 
         </div>
 

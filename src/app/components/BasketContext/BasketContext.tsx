@@ -65,12 +65,12 @@ const BasketProvider = ({ children }: BasketProviderProps) => {
         // Update the quantity if the item already exists in the basket
         return prevBasket.map((basketItem) =>
           basketItem.id === item.id
-            ? { ...basketItem, quantity: basketItem.quantity + 1 }
+            ? { ...basketItem, quantity: basketItem.quantity + item.quantity }
             : basketItem
         );
       }
       // Add new item if it doesn't exist in the basket
-      return [...prevBasket, { ...item, quantity: 1 }];
+      return [...prevBasket, { ...item, quantity: item.quantity }];
     });
   }
 

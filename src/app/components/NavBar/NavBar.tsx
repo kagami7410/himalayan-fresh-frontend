@@ -91,7 +91,7 @@ const NavBar = () => {
       </div>
 
       <div className={` ${borderVisibile} `}>
-        <Link href={'/'} className={`btn btn-ghost text-xl mr-6 md:text-2xl md:mr-10 md:w-72`}> PolyReef Creations</Link>
+        <Link href={'/'} className={`btn btn-ghost text-xl mr-6 md:text-2xl md:mr-10 md:w-72`}> REEFIN 3D</Link>
       </div>
 
       <div className="flex  w-11/12 ">

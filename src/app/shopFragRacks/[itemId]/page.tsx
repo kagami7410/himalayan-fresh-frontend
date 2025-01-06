@@ -11,7 +11,8 @@ interface FragRackItem extends BasketItem {
   magnetNum: number;
   size: string;
   stockQuantity:number;
-  photoUrls: string[]
+  photoUrls: string[];
+  quantity: number;
 
 }
 
@@ -30,15 +31,24 @@ interface BasketItem {
 
 const page = ({ params }: { params: Promise<{ itemId: string }> }) => {
   const image_url = 'https://storage.googleapis.com/fragracks-web-images/test'
+const [itemQuantity, setItemQuanity] = useState<number>(0);
+  
   // asynchronous access of `params.id`.
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(true);
   const [currentImage, setCurrentImage] = useState('')
   const [item, setItem] = useState<FragRackItem>( );
+  const [basketItem, setBasketItem] = useState<BasketItem>({  id: 0,
+                                                              title: "",
+                                                              price: 0,
+                                                              code: "",
+                                                              description: "",
+                                                              quantity: 0});
+
   const { addItemToBasket } = useBasket();
   const [finishedLoading, setFinishedLoading] = useState(false) 
   const { itemId } = React.use(params)
-  const handleAddToBasket = (item: FragRackItem) => {
+  const handleAddToBasket = (item: BasketItem) => {
     addItemToBasket(item);
   };
   // const vaildPaths = ["getAll", "greenBeans", "darkRoastedBeans"]
@@ -61,7 +71,11 @@ const page = ({ params }: { params: Promise<{ itemId: string }> }) => {
       .then(res => res.json())
       .then(data =>{
          setItem(data)
-         setLoading(false)
+         setBasketItem((prevItem) => ({
+          ...prevItem,
+          id:data.id,
+          }));         
+        setLoading(false)
          setFinishedLoading(true)
         })
   }
@@ -72,7 +86,31 @@ const page = ({ params }: { params: Promise<{ itemId: string }> }) => {
 
   }
 
+  const increaseQuantity = () => {
+    setItemQuanity(itemQuantity + 1)
 
+  }
+
+  useEffect(() => {
+    setBasketItem((prevItem) => ({
+      ...prevItem,
+       quantity:itemQuantity,
+      }));
+    console.log(basketItem)
+  }, [itemQuantity])
+
+
+
+
+
+
+
+  const decreaseQuantity = () => {
+    if(itemQuantity > 0) {
+      setItemQuanity(itemQuantity - 1)
+    }
+    
+  }
 
 
 
@@ -96,12 +134,19 @@ const page = ({ params }: { params: Promise<{ itemId: string }> }) => {
           <img src={currentImage}></img>
 
           </div>
-          <div className='flex flex-col w-3/4 border p-3 justify-center lg:w-3/6'>
+          <div className='flex flex-col w-3/4 border p-3   lg:w-3/6'>
             <h1 className='flex  border p-3 justify-center p-6 text-3xl font-semibold'>{item?.title}</h1>
             {/* <Image src={`https://photos.google.com/photo/AF1QipP7E1cD1rstzB6feRN1y1Qx4D9o7eLG1FO2bApm`} width={500} height={500} alt="Example" /> */}
             <h3 className='flex  border p-3  p-6 text-2xl font-semibold'>£{item?.price}</h3>
             <h4 className='border w-1/4 text-center m-1 text-stone-100 text-xs'>{item?.code}</h4>
-            <button onClick={() => { handleAddToBasket({ item }) }} className='btn w-1/2'> Add To Cart</button>
+            <div className='flex justify-center items-center w-5/6'>
+            <div className='flex w-full  items-center justify-center m-4'>
+            <button onClick={decreaseQuantity} className=' text-2xl  w-2/6 border' >-</button>
+      <h1 className='flex text-md w-2/6 justify-center'>{itemQuantity}</h1>
+      <button onClick={increaseQuantity} className=' text-2xl  w-2/6 border' >+</button>
+             </div>
+            <button onClick={() => { handleAddToBasket(basketItem) }} className=' btn w-1/2'> Add To Cart</button>
+            </div>
           </div>
         </div>
         <div className='flex w-full min-h-screen border'></div>

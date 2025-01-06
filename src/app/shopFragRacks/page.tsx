@@ -21,7 +21,6 @@ const page = () => {
   // asynchronous access of `params.id`.
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(true);
-
   const [items, setItems] = useState<BasketItem[]>([]);
   const { addItemToBasket } = useBasket();
   const handleAddToBasket = (item: BasketItem) => {
@@ -71,6 +70,8 @@ const page = () => {
   })
 
 
+
+
   return (
     <>
     <div>
@@ -91,6 +92,8 @@ const page = () => {
         <input className="join-item btn btn-square" type="radio" name="options" aria-label="3" value={currentPage} placeholder='3'onChange={handlePageClick}/>
         <input className="join-item btn btn-square" type="radio" name="options" aria-label="4" value={currentPage} placeholder='4'onChange={handlePageClick}/>
       </div>
+
+
       </div>
 
 
