@@ -35,7 +35,7 @@ useEffect(() => {
   }
   setLoading(false)
 
-}, [])
+}, [basket])
 
 
   const returnBasketItems = basketItems?.map(eachItem => {
