@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { notFound } from 'next/navigation'
-import { useBasket } from '@/app/components/BasketContext/BasketContext';
+import { useBasket } from '@/src/app/components/BasketContext/BasketContext';
 import Loading from '../components/Loading/Loading';
 
 
@@ -10,22 +9,19 @@ interface BasketItem {
   title: string;
   price: number;
   code: string;
-  description: string;
   quantity: number;
 }
 
 
 
-const page = () => {
+const Page = () => {
 
   // asynchronous access of `params.id`.
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<BasketItem[]>([]);
-  const { addItemToBasket } = useBasket();
-  const handleAddToBasket = (item: BasketItem) => {
-    addItemToBasket(item);
-  };
+  const { addSingleItemToBasket } = useBasket();
+
   // const vaildPaths = ["getAll", "greenBeans", "darkRoastedBeans"]
 
   useEffect(() => {
@@ -64,7 +60,7 @@ const page = () => {
         {/* <Image src={`${title}-${code}`} alt="Example" /> */}
         <h3>£{eachItem.price}</h3>
         <h4 className='border w-1/4 text-center m-1 text-stone-100 text-xs'>{eachItem.code}</h4>
-        <button onClick={() => { handleAddToBasket(eachItem) }} className='btn w-1/2'> Add To Cart</button>
+        <button onClick={() => { addSingleItemToBasket(eachItem) }} className='btn w-1/2'> Add To Cart</button>
       </div>
     )
   })
@@ -101,4 +97,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

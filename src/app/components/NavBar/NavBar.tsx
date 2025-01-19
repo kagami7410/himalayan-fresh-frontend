@@ -1,30 +1,9 @@
 'use client'
 import { CiUser } from "react-icons/ci";
 import Link from 'next/link'
-import React, { useEffect, useState, createContext, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useBasket } from "../BasketContext/BasketContext";
-const BasketContext = createContext<BasketContextData | undefined>(undefined);
 
-
-
-// Define the context data
-interface BasketContextData {
-  basket: BasketItem[];
-  addItemToBasket: (item: BasketItem) => void;
-  getBasketCount: () => number;
-  getBasketTotal: () => number;
-}
-
-
-
-
-// Define a type for the item
-interface BasketItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
 
 const NavBar = () => {
 
@@ -51,7 +30,6 @@ const NavBar = () => {
   
 
   const borderVisibile = ''
-  let basketItemCount;
 
 
 

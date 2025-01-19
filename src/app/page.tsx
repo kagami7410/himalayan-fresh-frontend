@@ -1,15 +1,17 @@
 'use client'
-import LandingPage from './components/LandingPage/LandingPage'
 import { useEffect } from 'react';
+import LandingPage from './components/LandingPage/LandingPage'
+import { useBasket } from './components/BasketContext/BasketContext';
 
 export default function Home() {
+  const { basket } = useBasket();
 
   useEffect(() => {
-    const basketItemCount = localStorage.getItem('basketItemCount');
-    if (basketItemCount === "undefined") {
-      localStorage.setItem('basketItemCount', 0);
+    if (basket.length === null) {
+      localStorage.setItem('basket', JSON.stringify(basket));
     }
-  }, []);
+  }, [basket]);
+
 
 
   return (

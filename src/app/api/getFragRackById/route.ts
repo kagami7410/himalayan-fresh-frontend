@@ -15,6 +15,7 @@ export async function GET(req: NextRequest) {
         return NextResponse.json(data, { status: 200 });
     }
     catch(error) {
+        console.error(error); // Use the error
         return NextResponse.json({ error: 'Failed to get request' }, { status: 500 });
     }
 

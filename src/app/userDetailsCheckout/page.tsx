@@ -1,11 +1,10 @@
 'use client'
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useBasket } from '../components/BasketContext/BasketContext';
 import { useRouter } from 'next/navigation'
 import Loading from '../components/Loading/Loading';
 
-const page = () => {
+const Page = () => {
   const router = useRouter() // may be null or a NextRouter instance
 
 
@@ -28,15 +27,7 @@ const page = () => {
 
   });
 
-  // Define a type for the item
-  interface BasketItem {
-    id: number;
-    title: string;
-    price: number;
-    code: string;
-    description: string;
-    quantity: number;
-  }
+
 
   const orderBasketItems: OrderBasketItem[] = [];
 
@@ -179,4 +170,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

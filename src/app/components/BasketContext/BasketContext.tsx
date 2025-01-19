@@ -1,5 +1,4 @@
 'use client'
-import { basename } from 'path/posix';
 import React, { useEffect, useState, createContext, useContext, ReactNode } from 'react'
 const BasketContext = createContext<BasketContextData | undefined>(undefined);
 
@@ -11,6 +10,7 @@ interface BasketContextData {
   removeBasketState: () => void;
   getBasketCount: () => number;
   getBasketTotal: () => number;
+  addSingleItemToBasket: (item: BasketItem) => void;
 }
 
 
@@ -29,7 +29,6 @@ interface BasketItem {
   title: string;
   price: number;
   code: string;
-  description: string;
   quantity: number;
 }
 // Define the provider props type
@@ -71,6 +70,23 @@ const BasketProvider = ({ children }: BasketProviderProps) => {
       }
       // Add new item if it doesn't exist in the basket
       return [...prevBasket, { ...item, quantity: item.quantity }];
+    });
+  }
+
+
+  const addSingleItemToBasket = (item: BasketItem) => {
+    setBasket((prevBasket) => {
+      const existingItem = prevBasket.find((basketItem) => basketItem.id === item.id);
+      if (existingItem) {
+        // Update the quantity if the item already exists in the basket
+        return prevBasket.map((basketItem) =>
+          basketItem.id === item.id
+            ? { ...basketItem, quantity: basketItem.quantity + 1 }
+            : basketItem
+        );
+      }
+      // Add new item if it doesn't exist in the basket
+      return [...prevBasket, { ...item, quantity: 1 }];
     });
   }
 
@@ -128,7 +144,7 @@ const BasketProvider = ({ children }: BasketProviderProps) => {
     
 
   return (
-    <BasketContext.Provider value={{ basket, removeBasketState, addItemToBasket, getBasketCount, getBasketTotal, removeItemInBasket}}>
+    <BasketContext.Provider value={{ basket,addSingleItemToBasket, removeBasketState, addItemToBasket, getBasketCount, getBasketTotal, removeItemInBasket}}>
       <div>
         {children}
       </div>

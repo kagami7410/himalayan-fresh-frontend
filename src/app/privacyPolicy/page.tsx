@@ -5,7 +5,7 @@ const page = () => {
     <div className=' mt-4 md:mt-8 flex flex-col border justify-center items-center'>
       <div className='border flex flex-col w-5/6 md:w-1/2  p-2 md:p-4'>
         <h1 className='flex text-3xl font-medium justify-center p-4 '>Privacy policy </h1>
-        <p  className='text-sm'>This Privacy Policy outlines how your personal data is collected, used, shared, and retained when you interact with or make purchases from www.reef-print.co.uk (the "Site"). It ensures transparency about data practices and compliance with applicable laws, like the GDPR.</p>
+        <p  className='text-sm'>This Privacy Policy outlines how your personal data is collected, used, shared, and retained when you interact with or make purchases from www.reef-print.co.uk (the [Site]). It ensures transparency about data practices and compliance with applicable laws, like the GDPR.</p>
       </div>
       <div className='border flex flex-col w-5/6 md:w-1/2  p-2 md:p-4'>
         <h1 className='flex text-xl'>1. Contact Information </h1>

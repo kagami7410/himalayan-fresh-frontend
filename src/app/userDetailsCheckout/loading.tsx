@@ -2,10 +2,9 @@ import React from 'react'
 
 const loading = () => {
     return (
-        <div className='fixed top-1/3 left-1/2 -translate-x-1/2  m-auto'>
-            <span className="loading loading-ring loading-lg"></span>
-        </div>
-
+        <div className=' flex relative justify-center min-h-96 pt-36 bg-slate-300 w-full'>
+        <span className="loading loading-bars loading-lg border bg-orange-600"></span>
+    </div>
 
     )
 }

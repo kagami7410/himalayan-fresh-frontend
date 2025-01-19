@@ -2,7 +2,6 @@
 import styles from './LandingPage.module.css'
 import '/src/app/globals.css'
 import React, { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const LandingPage = () => {
@@ -13,10 +12,10 @@ const LandingPage = () => {
 
 
 
-  const [showVideo, setShowVideo] = useState('recentlyAddedCoralsContainer');
+  // const [showVideo, setShowVideo] = useState('recentlyAddedCoralsContainer');
 
 
-  const [border, setBorder] = useState('');
+  // const [border, setBorder] = useState('');
   const observedElement = useRef(null);
 
   const [isMobile, setIsMobile] = useState(false)
@@ -76,45 +75,47 @@ const LandingPage = () => {
 
 
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShowVideo('recently-added-corals-container video-visible')
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setShowVideo('recently-added-corals-container video-visible')
 
-          console.log('Element is in view!');
-        } else {
-          setShowVideo('recently-added-corals-container ')
+  //         console.log('Element is in view!');
+  //       } else {
+  //         setShowVideo('recently-added-corals-container ')
 
-          console.log('Element is out of view!');
-        }
-      },
-      {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger callback when 10% of the element is in view
-      }
-    );
+  //         console.log('Element is out of view!');
+  //       }
+  //     },
+  //     {
+  //       root: null, // Use the viewport as the root
+  //       rootMargin: '0px',
+  //       threshold: 0.1 // Trigger callback when 10% of the element is in view
+  //     }
+  //   );
 
-  }, []);
+  // }, []);
 
   return (
-    <div className={`${styles.landingPageContainer} ${border}`}>
-      <div className={`${styles.landingPageTopContainer} ${border} bg-slate-200 pb-10 pt-4`}>
-        <div className={`${styles.landingPageDescription} ${border} transform transition-all `}
+    <div className={`${styles.landingPageContainer}`}>
+      <div className={`${styles.landingPageTopContainer} bg-slate-200 pb-10 pt-4`}>
+        <div className={`${styles.landingPageDescription} transform transition-all `}
           style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(${xPosition}%)` }}>
-          <div className={`${styles.mainHeadline} ${border}`}>Rock-Solid Magnetic Frag Holder</div>
-          <div className={`${styles.shortDescription} ${styles.glow} ${styles.textGlow} ${border}
-            `}>- "Never worry about slipping or shifting – perfect for reef aquariums.".</div>
-          <div className={`${styles.shopCoralsButtonContainer} ${border} `}>
+          <div className={`${styles.mainHeadline}`}>Rock-Solid Magnetic Frag Holder</div>
+          <div className={`${styles.shortDescription} ${styles.glow} ${styles.textGlow}`}>- Never worry about slipping or shifting – perfect for reef aquariums.</div>
+          <div className={styles.shopCoralsButtonContainer}>
             <Link href={{ pathname: '/shopFragRacks' }} className="btn btn-lg opacity-0 hover:bg-yellow-400 bg-yellow-300 sm:opacity-100 border-0  sm:btn-lg">Buy Now</Link>
           </div>
         </div>
 
+        <div className={`${styles.landingPageImageMainContainer} card `} style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(-${xPosition}%)` }}>
+          <div className='card-over flex justify-center align-middle items-center'>
+            <Link href='/shopFragRacks' className="mt-10 btn z-10 opacity-85 btn-lg sm:opacity-0 bg-yellow-300  hover:bg-yellow-500">Buy Now</Link>
+            <div className='flex absolute'>
+            <img className='md:scale-125 scale-110' src='https://storage.googleapis.com/fragracks-web-images/frag-racks-images/IMG_2303.png' />
 
-        <div className={`${styles.landingPageImageMainContainer} ${border} card `} style={{ opacity: `${opacityEnabled}`, transitionDuration: '750ms', transform: `translateX(-${xPosition}%)` }}>
-          <div className='card-over flex justify-center'>
-            <Link href='/shopFragRacks' className="btn  opacity-80 btn-lg sm:opacity-0">Buy Now</Link>
+            </div>
 
 
           </div>
@@ -156,7 +157,7 @@ const LandingPage = () => {
             <div className='mt-4'>
             <h1 className='text-sm'>📢 Grab yours now at the best price!</h1>
             <h1 className='text-sm'>👉 Visit REEFIN 3D to upgrade your reef tank today! </h1>
-            <h1 className='text-sm'>✨ Don't miss out! Your reef deserves the best! ✨</h1>
+            <h1 className='text-sm'>✨ Do not miss out! Your reef deserves the best! ✨</h1>
 
             </div>
 

@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import NavBar from './components/NavBar/NavBar'
-import NavBar2 from './components/Footer/Footer'
 import BasketProvider from './components/BasketContext/BasketContext';
 import Footer from './components/Footer/Footer'
 

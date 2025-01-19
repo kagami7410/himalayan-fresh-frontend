@@ -26,7 +26,6 @@ export async function POST(request: Request) {
     
   } catch (error) {
     console.error("Error handling POST request:", error);
-
     // Send an error response
     return NextResponse.json({ error: "Something went wrong!" }, { status: 500 });
   }
